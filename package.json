@@ -22,10 +22,10 @@
     "sinon": "^6.1.5"
   },
   "devDependencies": {
-	"start": "node servr.js",
     "mocha": "^5.2.0"
   },
   "scripts": {
+    "start": "node servr.js",
     "test": "mocha"
   },
   "author": "@LCMr_music",
