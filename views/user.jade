@@ -1,0 +1,95 @@
+doctype html
+html(lang="en")
+	head
+		title Sisizathu Training 
+		link(href='/css/bootstrap.min.css', rel ='stylesheet')
+		link(href='/css/demo.css', rel ='stylesheet')
+		link(href='/css/mystyle.css', rel ='stylesheet')
+	body
+		nav(class="nav navbar-fixed-top" role="navigation" style="background:white;padding-left:7%" )
+			div(class="container-fluid")
+				div(class="navbar-header")
+					button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav")
+						span(class="sr-only") Toggle Navigation
+						span(class="icon-bar")
+						span(class="icon-bar")
+						span(class="icon-bar")
+				div(class="collapse navbar-collapse" id="nav")
+					ul(class="nav navbar-nav" style="float:left")
+						li
+							a(href="/") Home
+						li
+							a(href="/events") Events
+						li
+							a(href="/learn") E-Learning
+						li
+							a(href="/contact") Contact Us
+		#mainContentDiv.col-lg-12(style="color:#007777; padding-left:10%")
+			br
+			br
+			br
+			br
+			.col-lg-4
+				img(src="images/picture1.png" style="max-width:140px; max-height:140px;")
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				img(src="images/img_Graduation Ceremony.jpg" style="max-width:140px; max-height:140px;")
+			.col-lg-8
+				label Name    : Someone's Name 
+				br
+				label Course  : End User Computing 
+				br
+				label Credits : 123 
+				br
+				br
+				button(type="button") Edit Profile
+				&nbsp;&nbsp;&nbsp;
+				a(class="btn" style="font-family: inherit;font-size: inherit;line-height: inherit" href="/") Sign Out
+			.col-lg-12
+					br
+					a(href="") Course 
+					&nbsp;&nbsp;|&nbsp;&nbsp;
+					a(href="") Write Exam
+					&nbsp;&nbsp;|&nbsp;&nbsp;
+					a(href="") Result
+					br
+					br
+					ul(id="myTabs" class="nav nav-tabs" role="tablist")
+							li(role="presentation" class="active")
+								a(href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true") Home
+							li(role="presentation" class="")
+								a(href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false") Profile
+							li(role="presentation" class="dropdown") 
+								a(href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false") Dropdown <span class="caret"></span></a>
+								ul(class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents")
+									li(class="")
+										a(href="#dropdown1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1" aria-expanded="false") Dropdown1
+									li
+										a(href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2" aria-expanded="false") Dropdown2
+
+					div(id="myTabContent" class="tab-content")
+						div(role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab")
+							br 
+							img(src="images/picture12.jpg" style="width:80%; max-width:240px; height:240px;")
+							p.
+								Learning is always continuous, learning to learn is the key to learning
+								you out to learn and continue continually to learn
+								Learning is always continuous, learning to learn is the key to learning
+								you out to learn and continue continually to learn
+								Learning is always continuous, learning to learn is the key to learning
+								you out to learn and continue continually to learn
+								Learning is always continuous, learning to learn is the key to learning
+								you out to learn and continue continually to learn
+							button(type="button") Okay
+							br
+							br
+							br
+						div(role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab").
+						
+						div(role="tabpanel" class="tab-pane fade" id="dropdown1" aria-labelledby="dropdown1-tab").
+			
+						div(role="tabpanel" class="tab-pane fade" id="dropdown2" aria-labelledby="dropdown2-tab")
+						
+		.col-lg-12(style="padding-left:30%;color:gray")
+			p.
+				</br>
+				&copy; Sisizathu Training 2019 | <span style="color:orange">Alexcious</span><span style="color:skyblue">LC</span> WEb Dev. 2019

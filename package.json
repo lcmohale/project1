@@ -1,0 +1,37 @@
+{
+  "name": "sisizathu",
+  "version": "1.0.0",
+  "description": "sisizathu training app",
+  "main": "servr.js",
+  "dependencies": {
+    "append-field": "^1.0.0",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "busboy": "^0.2.14",
+    "express": "^4.16.3",
+    "cookie-parser": "^1.4.4",
+    "jade": "^1.11.0",
+    "mongoose": "^5.2.12",
+    "multer": "^1.3.1",
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "socket.io": "^2.2.0",
+    "twilio": "^3.29.0",
+    "sinon": "^6.1.5"
+  },
+  "devDependencies": {
+	"start": "node servr.js",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "@LCMr_music",
+  "license": "ISC",
+  "keywords": [
+    "sisizathu",
+    "training"
+  ]
+}

@@ -1,0 +1,101 @@
+doctype html
+html(lang="en")
+	head
+		title Sisizathu Training Registration
+		link(href='/css/bootstrap.min.css', rel ='stylesheet')
+		link(href='/css/demo.css', rel ='stylesheet')
+		link(href='/css/mystyle.css', rel ='stylesheet')
+	body(style="overflow-y:hidden")
+		nav(class="nav navbar-fixed-top" role="navigation" style="background:white;padding-left:7%" )
+			div(class="container-fluid")
+				div(class="navbar-header")
+					button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav")
+						span(class="sr-only") Toggle Navigation
+						span(class="icon-bar")
+						span(class="icon-bar")
+						span(class="icon-bar")
+				div(class="collapse navbar-collapse" id="nav")
+					ul(class="nav navbar-nav" style="float:left")
+						li
+							a(href="/") Home
+						li
+							a(href="/events") Events
+						li
+							a(href="/learn") E-Learning
+						li
+							a(href="/contact") Contact Us
+		#mainContentDiv.col-lg-12(style="color:#007777; padding-left:10%; height:600px;")
+			br
+			br
+			br
+			br
+			div(class="col-lg-8" style="max-height:600px; border:1px solid #007777;height:90%; overflow-y:auto")
+				br
+				div(class="col-lg-8" style="position:relative; border:1px solid #007777; text-align:center; background:white; width:100%;")
+					img(src="images/picture1.png" style="max-width:140px; max-height:140px;")
+					br
+					p Registration
+					h5(style="text-align:center") Fill-in the form below to register for a course on Sisizathu Training
+				br
+				br
+				br
+				br
+				br
+				br
+				form(class="col-lg-12" action="registration" class="form-vertical")
+					br
+					br
+					label(style="font-size:18pt") Personal Info.
+					br
+					div(class="form-group" class="col-lg-6")
+						label Name:
+						input(type="text" maxlength="30" class="form-control")
+						label Surname: 
+						input(type="text" maxlength="30" class="form-control")
+					div(class="form-group" class="col-lg-6")
+						label Contact No: 
+						input(type="text" maxlength="30" class="form-control")
+						label Email: 
+						input(type="text" maxlength="10" class="form-control")
+					div(class="form-group" class="col-lg-12")
+						label Profile Picture:
+						input(type="file" class="form-control-file")
+					label(style="font-size:18pt;") Academic Info.
+					br
+					div(class="form-group" class="col-lg-6")
+						label Highest Qualification Obtained:
+						select(class="form-control")
+							option 	Matric
+							option	Diploma
+							option	Degree
+							option	Phd
+							option	Other
+					div(class="form-group" class="col-lg-6")
+						label Qualification Documents:
+						input(type="file" class="form-control")
+					label(style="font-size:18pt;") Registration Info.
+					br
+					div(class="form-group" class="col-lg-6")
+						label Select Course:
+						select(class="form-control")
+							option 	End User Computing
+							option	Systems Development
+							option	IT Technical Support
+							option	Advance MS 
+							option	Other
+						br
+						label Course Credits: 132
+						label Course Duration: 12 Months
+					div(class="form-group" class="col-lg-6")
+						label Course Detail:
+						textarea(class="form-control" rows="10") Tis Course will enable you with the ability to understand and know how to work with Computers
+					div(class="form-group" class="col-lg-12")
+						input(class="btn btn-warning" type="submit" value="Submit Form")
+						&nbsp;&nbsp;&nbsp;
+						a(class="btn btn-warning" style="border:1px solid gray; background:white; color:gray" href="/") Cancel
+						
+						
+		.col-lg-12(style="padding-left:30%;color:gray")
+			p.
+				</br></br>
+				&copy; Sisizathu Training 2019 | <span style="color:orange">Alexcious</span><span style="color:skyblue">LC</span> WEb Dev. 2019

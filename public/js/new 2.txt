@@ -1,0 +1,40 @@
+aj.onreadystatechange = function(){
+			if (aj.readyState == 4 && aj.status == 200){
+					posts = JSON.parse(aj.responseText);
+					
+					$('#allContent').hide();
+					$('#monthContent').remove();
+					$(document.body).append("<div id=\"monthContent\"></div>")
+					const montContentDiv = $('#monthContent');
+					
+					if (posts.length === 0){
+						$('#monthContent').remove();
+						//$('#mainContentDiv').hide();
+						$('#mainContentDivN').remove();
+						$('body').append('<div id="mainContentDivN" class="col-lg-12"><p id="none" style="background:white">Be the the first to Place post for the Month! <span style="color:orange">Dintsang!</span><br/><br/><br/><span style="color:gray" class="col-lg-12">© Dinstang 2018</span></p></div>');
+					}
+				 	for (i in posts){
+						$('#none').remove();
+						$('#mainContentDivN').remove();
+						if (posts[i].type === 'Wedding' ||posts[i].type === 'Church Event' || posts[i].type === 'Graduation Ceremony' || posts[i].type === 'Sport' || posts[i].type === 'Party' || posts[i].type === 'Bash'){
+							$('#monthContent').append('<div id="mainContentDiv" class="col-lg-12"><div id="divDinContent" class="col-lg-12 container"><div id="postDetail3"><h4 style="color:#DDDD00;"></h4><p><span style="color:orange"id="2'+posts[i]._id+'">'+posts[i].likes+'</span><br><a onclick="attending(\''+posts[i]._id+'\', \''+posts[i].likes+'\')">Will be there</a></p></div><div id="postDetail" style="background:#a94442"><h4 style="color:rgb(250, 230, 0); font-weight:bold; font-family:Courier New;font-size:18pt">'+posts[i].type+'</h4><p style="text-wrap:suppress; word-break:break-word">'+posts[i].post_detail+'<br><span style="color:#DDDD00">Day:</span><span style="color:skyblue">'+posts[i].day+'</span><br><span style="color:#DDDD00">Time: '+posts[i].start_time+' '+posts[i].end_time+'</span><br><span style="color:skyblue">Posted by:</span><span style="color:#DDDD00">'+posts[i].publisher_name+' '+posts[i].surname+'</span><br></p></div><div id="postDetail2"><h4 style="font-size:15pt; background:#a94442; color:rgb(250, 230, 0);" class="btn fn">'+posts[i].location+'</h4></div><div id="postDetail4"><p style="background:#a94442;padding-left:10px; padding-right:10px;"><a href="/share_post/?id='+posts[i]._id+'" style="color:white">Share Post</a></p></div></div><div id="copyrii" style="padding-left:6%" class="col-lg-12">© Dinstang 2018</div></div>')
+						}
+						if (posts[i].type === 'Funeral'){
+							$('#monthContent').append('<div id="mainContentDiv" class="col-lg-12"><div id="divDinContent" class="col-lg-12 container"><div id="postDetail3" style="top: 370px;"><h4 style="color:#DDDD00;"></h4><p> <a href="/send_condolences/?id='+posts[i]._id+'&amp;publisher_name='+posts[i].publisher_name+'&amp;post_detail='+posts[i].post_detail+'">Send Condolences </a></p></div><div id="postDetail" style="background:#333"><h4 style="color:skyblue; font-weight:bold; font-family:Courier New;font-size:18pt">'+posts[i].type+'</h4><p style="text-wrap:suppress; word-break:break-word">'+posts[i].post_detail+'<br><span style="color:#DDDD00">Day:</span><span style="color:white">'+posts[i].day+'</span><br><span style="color:#DDDD00">Time: </span><span>'+posts[i].start_time+' - '+posts[i].end_time+'</span><br><span style="color:skyblue">Posted by:</span><span style="color:#DDDD00">'+posts[i].publisher_name+' '+posts[i].surname+'</span><br></p></div><div id="postDetail2"><h4 style="font-size:15pt; background:#333; color:white" class="btn fn">'+posts[i].location+'</h4></div><div id="postDetail4"><p style="background:#333; padding-left:10px; padding-right:10px;"> <a href="/share_post/?id='+posts[i]._id+'" style="color:white">Share Post</a></p></div></div><div id="copyriii" style="padding-left:6%" class="col-lg-12">© Dinstang 2018 </div></div>')
+						}
+						if(posts[i].type === 'Other'){
+							$('#monthContent').append(
+								'<div id="mainContentDiv" class="col-lg-12"><div id="divDinContent" class="col-lg-12 container"><div id="'+posts[i]._id+'img2" style="height:100%;width:100%;background:white"><div id="postDetailOther"><h4 id="otherName">'+posts[i].publisher_name+' '+posts[i].surname+'<span style="color:#009977">'+posts[i].location+'</span></h4><div style="height:90%; width:100%;" class="col-lg-12 otherImagee"><p id="otherText" style="text-wrap:suppress; word-break:break-word;font-size:11pt;"><span style="background:beige;color:#121213">'+posts[i].post_detail+'</span></p><img id="otherImg" src="'+posts[i].attachment+'" class="img-responsive"></div></div></div><div id="'+posts[i]._id+'hide2" style="height:7%; width:100%"><div id="postDetail3Other"><span style="font-size:10pt; color:orange" id="1'+posts[i]._id+'">star('+posts[i].likes+')</span><p> <a onclick="givestar(\''+posts[i]._id+'\',\''+posts[i].likes+'\')">Give it a Star</a></p></div><div id="postDetail4Other"><a onclick="getImg2(\''+posts[i]._id+'\')">Make Mime</a></div></div><br><br></div></div>'
+							)
+						}
+						if(posts[i].type === 'Job Offer'){
+							$('#monthContent').append('<div id="jobOff" class="col-lg-12"><div id="divDinContent" class="col-lg-12 container"><div id="postDetail3JobPost" style="background:rgb(99, 70, 70);"><p><a href="/job_application/?job_title='+posts[i].job_title+'&amp;publisher_name='+posts[i].publisher_name+'&amp;email='+posts[i].email+'" style="color:white">Apply for Job</a></p></div><div id="postDetailJobPost" style="background:rgb(99, 70, 70);"><h4 style="color:white; font-weight:bold; font-family:Courier New;font-size:18pt">'+posts[i].type+'</h4><p style="text-wrap:suppress; word-break:break-word">'+posts[i].no_of_candidates+' People are required for the following position:<span style="color:lime">'+posts[i].job_title+' at</span><span style="color:skyblue"> '+posts[i].publisher_name+'</span><br><span style="color:orange">Closing Date : </span><span style="color:white;background:black">'+posts[i].closing_date+'</span><br><row></row></p><div class="col-lg-6"><label style="color:white;">Requirements: </label><ol><li>'+posts[i].requirements[0]+'</li><li>'+posts[i].requirements[1]+'</li><li>'+posts[i].requirements[2]+'</li><li>'+posts[i].requirements[3]+'</li><li>'+posts[i].requirements[4]+'</li><br></ol></div><div class="col-lg-6"><label style="color:white;">Duties: </label><ol><li>'+posts[i].duties[0]+'</li><li>'+posts[i].duties[1]+'</li><li>'+posts[i].duties[2]+'</li><li>'+posts[i].duties[3]+'</li><li>'+posts[i].duties[4]+'</li><br></ol></div><p></p></div></div></div>')
+						}
+						if(posts[i].type ==='Job Request'){
+							$('#monthContent').append('<div id="mainContentDiv" class="col-lg-12"><div id="divDinContent" class="col-lg-12 container"><div id="postDetail3Job" style="background:rgba(72, 142, 8, 0.89);"><a style="color:white" href="/consult_to_hire/?publisher_name='+posts[i].publisher_name+'&amp;surname='+posts[i].surname+'&amp;expected_salary='+posts[i].expected_salary+'">Consult for Hiring</a></div><div id="postDetailJob" style="background:rgba(72, 142, 8, 0.89);"><h4 style="color:white;font-family:Courier New;font-size:18pt">'+posts[i].type+'</h4><p style="text-wrap:suppress; word-break:break-word"> <span style="color:skyblue">Name: </span><span style="color:white">'+posts[i].publisher_name+' '+posts[i].surname+'</span><br><span style="color:skyblue">Requested Job:</span><span style="color:white">'+posts[i].job_title+'</span><br><span style="color:skyblue">Expected Payment :</span><span style="color:white">'+posts[i].expected_salary+'</span><br><span style="color:skyblue">Age: </span><span>'+posts[i].age+'</span><br><label style="color:white; text-decoration:underline;">Qualifications: </label></p><ol><li>'+posts[i].qualifications[0]+'</li><li>'+posts[i].qualifications[1]+'</li><li>'+posts[i].qualifications[2]+'</li><li>'+posts[i].qualifications[3]+'</li><li>'+posts[i].qualifications[4]+'</li><br></ol><p></p></div></div><div id="copyriii" style="padding-left:6%" class="col-lg-12">© Dinstang 2018</div></div>'
+							)
+						}
+					}				
+			}		
+		}	
+	});
