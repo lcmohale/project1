@@ -7,7 +7,7 @@ app.set('views', path.join(__dirname,'views'));
 
 //Configure Middleware
 //app.use(express.favicon(path.join(__dirname,'public/favicon.ico')))
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'/public')));
 
 
 
