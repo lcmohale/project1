@@ -24,6 +24,9 @@
   "devDependencies": {
     "mocha": "^5.2.0"
   },
+  "engines": {
+    "node": "10.15.3"
+  },
   "scripts": {
     "start": "node servr.js",
     "test": "mocha"
