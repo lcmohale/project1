@@ -7,24 +7,32 @@ app.set('views', path.join(__dirname,'views'));
 
 //Configure Middleware
 //app.use(express.favicon(path.join(__dirname,'public/favicon.ico')))
-app.use(express.static(path.join(__dirname,'/public')));
+app.use(express.static(path.join(__dirname,'public')));
 
 
 
 app.get('/',function(req,res){
-	res.render('index')
+	res.sendFile(path.join(__dirname+'/views/System/index.html'));
 })
 
 app.get('/about',function(req,res){
-	res.render('about')
+	res.sendFile(path.join(__dirname+'/views/System/about.html'));
 })
 
 app.get('/contact',function(req,res){
-	res.render('contact')
+	res.sendFile(path.join(__dirname+'/views/System/contact.html'));
+})
+
+app.get('/news',function(req,res){
+	res.sendFile(path.join(__dirname+'/views/System/news.html'));
+})
+
+app.get('/courses',function(req,res){
+	res.sendFile(path.join(__dirname+'/views/System/courses.html'));
 })
 
 app.get('/register',function(req,res){
-	res.render('register')
+	res.sendFile(path.join(__dirname+'/views/System/register.html'));
 })
 
 app.get('/signin',function(req,res){
@@ -32,7 +40,11 @@ app.get('/signin',function(req,res){
 })
 
 app.get('/learn',function(req,res){
-	res.render('learn')
+	res.sendFile(path.join(__dirname+'/views/System/learn.html'));
+})
+
+app.get('/login',function(req,res){
+	res.sendFile(path.join(__dirname+'/views/System/login.html'));
 })
 
 app.get('/events',function(req,res){
@@ -42,7 +54,6 @@ app.get('/events',function(req,res){
 app.get('/user',function(req,res){
 	res.render('user')
 })
-
 
 
 const port = process.env.PORT || 3000;
