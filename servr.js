@@ -16,16 +16,15 @@ app.get('/',function(req,res){
 })
 
 app.get('/admin',function(req,res){
-	if (req.query.token === '5ad5mc50ci9955e480f78b61fe8admin'){
+	if (req.query.t === '5ad5mc50ci9955e480f78b61fe8admin'){
 		res.render('System/admin');
-	}
-	if (req.query.students === 'registered'){
+	}else if (req.query.students === 'registered'){
 		res.render('System/students');
-	}
-	if (req.query.exams === 'update'){
+	}else if (req.query.exams === 'update'){
 		res.render('System/exams');
+	}else{
+		res.sendFile(path.join(__dirname+'/views/System/login.html'));
 	}
-	res.sendFile(path.join(__dirname+'/views/System/login.html'));
 })
 
 app.get('/about',function(req,res){
@@ -40,8 +39,8 @@ app.get('/news',function(req,res){
 	res.sendFile(path.join(__dirname+'/views/System/news.html'));
 })
 
-app.get('/courses',function(req,res){
-	res.sendFile(path.join(__dirname+'/views/System/courses.html'));
+app.get('/course',function(req,res){
+	res.render('System/course');
 })
 
 app.get('/exam',function(req,res){
@@ -68,14 +67,13 @@ app.post('/login',urlencodedParser,function(req,res){
 	const email = req.body.email;
 	const password = req.body.password
 	
-	console.log(email, password)
-	
 	if (email === 'admin@sisizathu' && password === 'admin'){
-		res.redirect('/admin?token=5ad5mc50ci9955e480f78b61fe8admin')
+		res.redirect('/admin?t=5ad5mc50ci9955e480f78b61fe8admin')
 	}
 	if (email === 'student@sisizathu' && password === 'student'){
 		res.redirect('/student?t=stu5sd5tc50ci9955e480f78b61fe8ad')
 	}
+	res.redirect('login')
 })
 
 app.get('/events',function(req,res){
@@ -93,5 +91,5 @@ app.get('/student',function(req,res){
 
 const port = process.env.PORT || 3000;
 app.listen(port,()=>{
-	console.log('Running on port'+ port)
+	//console.log('Running on port'+ port)
 });
