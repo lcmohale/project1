@@ -1,4 +1,6 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({extended:true});
 const path = require('path');
 
 const app = express();
@@ -9,10 +11,21 @@ app.set('views', path.join(__dirname,'views'));
 //app.use(express.favicon(path.join(__dirname,'public/favicon.ico')))
 app.use(express.static(path.join(__dirname,'public')));
 
-
-
 app.get('/',function(req,res){
 	res.sendFile(path.join(__dirname+'/views/System/index.html'));
+})
+
+app.get('/admin',function(req,res){
+	if (req.query.token === '5ad5mc50ci9955e480f78b61fe8admin'){
+		res.render('System/admin');
+	}
+	if (req.query.students === 'registered'){
+		res.render('System/students');
+	}
+	if (req.query.exams === 'update'){
+		res.render('System/exams');
+	}
+	res.sendFile(path.join(__dirname+'/views/System/login.html'));
 })
 
 app.get('/about',function(req,res){
@@ -31,6 +44,10 @@ app.get('/courses',function(req,res){
 	res.sendFile(path.join(__dirname+'/views/System/courses.html'));
 })
 
+app.get('/exam',function(req,res){
+	res.render('System/exam');
+})
+
 app.get('/register',function(req,res){
 	res.sendFile(path.join(__dirname+'/views/System/register.html'));
 })
@@ -47,14 +64,34 @@ app.get('/login',function(req,res){
 	res.sendFile(path.join(__dirname+'/views/System/login.html'));
 })
 
+app.post('/login',urlencodedParser,function(req,res){
+	const email = req.body.email;
+	const password = req.body.password
+	
+	console.log(email, password)
+	
+	if (email === 'admin@sisizathu' && password === 'admin'){
+		res.redirect('/admin?token=5ad5mc50ci9955e480f78b61fe8admin')
+	}
+	if (email === 'student@sisizathu' && password === 'student'){
+		res.redirect('/student?t=stu5sd5tc50ci9955e480f78b61fe8ad')
+	}
+})
+
 app.get('/events',function(req,res){
 	res.render('events')
 })
 
-app.get('/user',function(req,res){
-	res.render('user')
+app.get('/student',function(req,res){
+	if (req.query.t === 'stu5sd5tc50ci9955e480f78b61fe8ad'){
+		res.render('System/student')
+	}else{
+		res.sendFile(path.join(__dirname+'/views/System/login.html'));
+	}
+	
 })
 
-
 const port = process.env.PORT || 3000;
-app.listen(port);
+app.listen(port,()=>{
+	console.log('Running on port'+ port)
+});
