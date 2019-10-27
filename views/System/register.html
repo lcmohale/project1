@@ -22,32 +22,25 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
-	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
-
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="css/magnific-popup.css">
-
 	<!-- Flexslider  -->
 	<link rel="stylesheet" href="css/flexslider.css">
-
 	<!-- Owl Carousel -->
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	
 	<!-- Flaticons  -->
 	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
-
 	<script src="js/modernizr-2.6.2.min.js"></script>
-
+	
 	</head>
 	<body>
 		
@@ -102,7 +95,7 @@
 				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h2>Register for a course today</h2>
-									<form action="/register" method="POST">
+									<form id="regForm" action="/register" method="POST" enctype="multipart/form-data">
 										<div class="row form-group">
 											<h2>Personal Details</h2>
 											<div class="col-md-6">
@@ -111,37 +104,37 @@
 											</div>
 											<div class="col-md-6">
 												<!-- <label for="lname">Last Name</label> -->
-												<input type="text" id="lname" name="lname" class="form-control" placeholder="Your lastname">
+												<input type="text" id="lname" name="s_name" class="form-control" placeholder="Your lastname">
 											</div>
 										</div>
 
 										<div class="row form-group">
 											<div class="col-md-12">
 												<!-- <label for="email">Email</label> -->
-												<input type="text" id="email" name="email" class="form-control" placeholder="Your email address">
+												<input type="text"  name="email" class="form-control" placeholder="Your email address">
 											</div>
 										</div>
 										<div class="row form-group">
 											<div class="col-md-12">
 												<!-- <label for="email">Email</label> -->
-												<input type="number" id="email" name="email" class="form-control" placeholder="Your Contact No">
+												<input maxlength="10" type="number"  name="contact_no" class="form-control" placeholder="Your Contact No">
 											</div>
 										</div>
 										<div class="row form-group">
 											<div class="col-md-12">
 												<label for="email">Enter Your ID No</label> 
-												<input type="text" id="email" name="id_no" class="form-control" placeholder="ID No">
+												<input maxlength="13" type="text"  name="id_no" class="form-control" placeholder="ID No">
 											</div>
 										</div>
 										<div class="row form-group">
 											<h2>Create Password</h2>
 											<div class="col-md-6">
 												<!-- <label for="fname">First Name</label> -->
-												<input type="text" id="fname" name="password" class="form-control" placeholder="Password">
+												<input type="password" id="fname" name="password" class="form-control" placeholder="Password">
 											</div>
 											<div class="col-md-6">
 												<!-- <label for="lname">Last Name</label> -->
-												<input type="text" id="lname" name="password_confirm" class="form-control" placeholder="Confirm Password">
+												<input type="password" id="lname" name="confirm_pass" class="form-control" placeholder="Confirm Password">
 											</div>
 										</div>
 										<div class="row form-group">
@@ -160,7 +153,7 @@
 											</div>
 											<div class="col-md-6">
 												<label for="fname">Student Options</label> 
-												<select name="course" class="form-control">
+												<select name="course_duration" class="form-control">
 													<option>Fulltime</option>
 													<option>Part Time</option>
 													<option>Long Distance</option>
@@ -179,7 +172,7 @@
 											<h2>Education Details</h2>
 											<div class="col-md-6">
 												<label for="fname">Highest obtained Qualification</label> 
-												<select name="course" class="form-control">
+												<select name="highest_qualification" class="form-control">
 													<option>Grade 10</option>
 													<option>Grade 11</option>
 													<option>Grade 12 / Matric</option>
@@ -187,8 +180,8 @@
 												</select>
 											</div>
 											<div class="col-md-6">
-												<label for="fname">Qualification Documents</label> 
-												<input type="file" id="email" name="qualification_docs" class="form-control">
+												<label for="qual_doc">Qualification Documents</label> 
+												<input type="file"  multiple="multiple" name="qualification_docs" class="form-control">
 											</div>
 										</div>
 										<div class="form-group">
@@ -296,6 +289,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/jquery.countTo.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script src="/js/jquery.validate.min.js"></script>
+	<script src="/js/validate.js"></script>
 
 	</body>
 </html>

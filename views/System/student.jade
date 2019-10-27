@@ -36,13 +36,20 @@ html
 					tbody
 						tr.
 							<td class="active">1</td> 
-							<td>Fabio Ndao</td> 
-							<td>End UserComputing</td>
-							<td>12 April 2019</td>
-							<td>ID.pdf </br> proof.pdf <br/> CV.pdf </td>
+							<td>#{student.name} #{student.s_name}</td> 
+							<td>#{student.course}</td>
+							<td>#{student.date_registered.toDateString()}</td>
+							<td>
+							#{student.documents[0]} <br/>
+							#{student.documents[1]} <br/>
+							#{student.documents[2]} <br/>
+							#{student.documents[3]} <br/>
+							#{student.documents[4]} <br/>
+							#{student.documents[5]}
+							</td>
 							<td><input type="file"/>
 				.col-lg-6(style="padding-top:2%")
-					&nbsp;&nbsp;&nbsp;&nbsp;<a href="/course" class="btn-sm btn-warning"> Go To Course </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/exam" class="btn-sm btn-info"> Write Exam </a> &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn-sm btn-success">View Results </a>
+					&nbsp;&nbsp;&nbsp;&nbsp;<a href="/course" class="btn-sm btn-warning"> Go To Course </a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn-sm btn-info"> Write Exam </a> &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn-sm btn-success">View Results </a>
 			div(class="col-md-12 text-center")
 				small(class="block" style="color:silver")
 					br
