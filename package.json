@@ -23,9 +23,9 @@
   },
   "engines": {
     "node": "10.15.3"
-	},
+  },
   "devDependencies": {
-	"start": "node servr.js",
+    "start": "node servr.js",
     "mocha": "^5.2.0"
   },
   "scripts": {
@@ -36,5 +36,13 @@
   "keywords": [
     "sisizathu",
     "training"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcmohale/project1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lcmohale/project1/issues"
+  },
+  "homepage": "https://github.com/lcmohale/project1#readme"
 }
