@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 
-const CON_URI = process.env.DB_CONNECT;
+const CON_URI = "mongodb+srv://lcmohale:abutimmino1@cluster0-nvb4e.mongodb.net/test?retryWrites=true&w=majority";
 
 
 function connectToDB(url){
