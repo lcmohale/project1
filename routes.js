@@ -140,7 +140,7 @@ module.exports = function(app,dbs){
 	app.post('/register', upload.fields([{'name':'qualification_docs'}]), function(req, res, next){
 		
 		const filePaths = [];
-		const qualification_docs = req.files.qualif_doc;
+		const qualification_docs = req.files.qualification_docs;
 		
 		for (let i in qualification_docs){
 			filePaths.push(qualification_docs[i].path)
