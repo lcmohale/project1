@@ -1,6 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 
-const CON_URI = "mongodb+srv://lcmohale:abutimmino1@cluster0-nvb4e.mongodb.net/test?retryWrites=true&w=majority";
+const CON_URI = 'mongodb://sisizathu:v1N4VZ8QaoXez1hVmXC13GKUfEDMTMjhUZ2rzWubTHn1DsIGZsYpqWK6nZ3pxNwHaXORFyPuNOYcs8EOoS6VcQ==@sisizathu.documents.azure.com:10255/?ssl=true'; 
+//"mongodb+srv://heroku_lwb31399:abutimmino1@ds23958.mlab.com:39858/heroku_lwb31399";
 
 
 function connectToDB(url){
