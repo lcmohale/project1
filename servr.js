@@ -18,7 +18,7 @@ initDintsangDB().then((dbs) =>{
 	
 	const app2 = routes(app,dbs)
 	const serve = require('http').Server(app2);
-	const port = process.env.PORT || 3000;
+	const port = process.env.PORT || 8080;
 	
 	serve.listen(port, function(){
 		console.log('Express Server is listening on port: ' + port)
