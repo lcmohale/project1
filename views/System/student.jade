@@ -32,7 +32,6 @@ html
 				table(class="table")
 					thead
 						tr <th>#</th> <th>Name</th> <th>Course</th> <th>Date registered</th> <th>Documents</th> <th>Update Documents</th> 
-
 					tbody
 						tr.
 							<td class="active">1</td> 
@@ -49,7 +48,7 @@ html
 							</td>
 							<td><input type="file"/>
 				.col-lg-6(style="padding-top:2%")
-					&nbsp;&nbsp;&nbsp;&nbsp;<a href="/course" class="btn-sm btn-warning"> Go To Course </a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn-sm btn-info"> Write Exam </a> &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn-sm btn-success">View Results </a>
+					&nbsp;&nbsp;&nbsp;&nbsp;<a href="/course?date_registered=#{student.date_registered.toDateString()}&s_name=#{student.name} #{student.s_name}&course=#{student.course}" class="btn-sm btn-warning"> Go To Course </a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn-sm btn-info"> Write Exam </a> &nbsp;&nbsp;&nbsp;&nbsp;<a class="btn-sm btn-success">View Results </a>
 			div(class="col-md-12 text-center")
 				small(class="block" style="color:silver")
 					br

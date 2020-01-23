@@ -20,7 +20,35 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 module.exports = function(app,dbs){
-
+	app.get('/setadmin',function(req,res){
+		res.sendFile(path.join(__dirname+'/views/System/setadmin.html'));
+	})
+	
+	app.post('/setadmin',urlencodedParser, function(req,res){
+		const new_admin ={
+			name:req.body.fname,
+			surname:req.body.s_name,
+			email:req.body.email,
+			password:req.body.password,
+			role:'admin'
+		}
+		
+		dbs.collection('users').find({email: new_admin.email})
+				.toArray((err,user)=>{
+					if (err){
+						console.log('User Not Found!');
+						return;
+					}else{
+						if(user.length >= 1){
+							res.redirect('/login');
+						}else{
+							dbs.collection('users').insertOne(new_admin);
+							res.redirect('/login');
+						}
+					}
+		});
+	})
+	
 	app.get('/',function(req,res){
 		res.sendFile(path.join(__dirname+'/views/System/index.html'));
 	})
@@ -119,7 +147,17 @@ module.exports = function(app,dbs){
 	})
 
 	app.get('/course',function(req,res){
-		res.render('System/course');
+		const name = req.query.s_name;
+		const date_registered = req.query.date_registered;
+		const course = req.query.course;
+		
+		const context = {
+			'name':name,
+			'date_registered':date_registered,
+			'course':course
+		}
+		console.log("Student "+ name +" "+date_registered + " "+ course);
+		res.render('System/course',context);
 	})
 
 	app.get('/exam',function(req,res){
@@ -177,6 +215,18 @@ module.exports = function(app,dbs){
 	app.get('/login',function(req,res){
 		res.sendFile(path.join(__dirname+'/views/System/login.html'));
 	})
+	
+	app.get('/reset',function(req,res){
+		res.sendFile(path.join(__dirname+'/views/System/reset.html'));
+	})
+	
+	app.post('/reset',urlencodedParser,function(req,res){
+		const email_address = req.body.email;
+		//console.log("Email: "+email_address);
+		//Send email reset link with specific user details
+		
+		res.sendFile(path.join(__dirname+'/views/System/reset.html'));
+	})
 
 	app.post('/login',urlencodedParser,function(req,res){
 		const email = req.body.email;
@@ -202,7 +252,7 @@ module.exports = function(app,dbs){
 							res.redirect('/login')
 						}
 					}
-				});
+		});
 		
 
 	})

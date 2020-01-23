@@ -83,20 +83,14 @@
 			   			<div class="row">
 				   			<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
 				   				<div class="slider-text-inner text-center">
-				   					<h1>Login</h1>
+				   					<h1>Enter email to receive password reset link.</h1>
 									<form action="/login" method="post">
 										<div class="row form-group">
-											<div class="col-md-6">
-												<!-- <label for="fname">First Name</label> -->
+											<div class="col-md-12">
 												<input type="text" id="fname" class="form-control" name="email" placeholder="email address">
 											</div>
-											<div class="col-md-6">
-												<!-- <label for="lname">Last Name</label> -->
-												<input type="password" id="lname" class="form-control" name="password" placeholder="password">
-											</div>
 										</div>
-										<input type="submit" value="Submit Details " class="btn btn-primary"><br/>
-										<a href="/reset">Forgot login details</a>
+										<input type="submit" value="Submit Details " class="btn btn-primary">
 									</form>
 								</div>
 				   			</div>
@@ -124,55 +118,6 @@
 							</ul>
 						</p>
 					</div>
-					
-					<div class="col-md-3 colorlib-widget">
-						<h4>Quick Links</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="/"><i class="icon-check"></i> Home</a></li>
-								<li><a href="/about"><i class="icon-check"></i> About Us</a></li>
-								<li><a href="/register"><i class="icon-check"></i> E-Learning</a></li>
-								<li><a href="/news"><i class="icon-check"></i> Events</a></li>
-							</ul>
-						</p>
-					</div>
-
-					<div class="col-md-3 colorlib-widget">
-						<h4>Resources</h4>
-						<p>
-							<!--ul class="colorlib-footer-links">
-								<li><a href="/courses"><i class="icon-check"></i> What can I study</a></li>
-							</ul-->
-						</p>
-					</div>
-
-					<div class="col-md-3 colorlib-widget">
-						<h4>Contact Info</h4>
-						<ul class="colorlib-footer-links">
-							<li> 1359 Lediga Street, <br> Kgotsong, Bothaville 9660</li>
-							<li><a href="tel://1234567920"><i class="icon-phone"></i> +27 64 521 5172</a></li>
-							<li><a href="mailto:sisizathutraining.co.za"><i class="icon-envelope"></i> sisizathutraining.co.za</a></li>
-							
-						</ul>
-					</div>
-				
-				</div>
-			</div>
-			
-			<div class="copy">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 text-center">
-							<p>
-								<small class="block">&copy; 
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved Sisizathu Training | AlexiusLC web development.
-
-</small><br> 
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
 		</footer>
 	</div>
 
